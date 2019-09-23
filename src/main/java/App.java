@@ -60,7 +60,7 @@ public class App {
             model.put("ranger", ranger);
             model.put("animals", Animals.all());
             model.put("location", Location.all());
-            model.put("sighting", Sighting.find(Integer.parseInt(req.params(":id"))));
+            model.put("sighting", Sightings.find(Integer.parseInt(req.params(":id"))));
             return new ModelAndView(model, "sighting-form.hbs");
 
         }, new HandlebarsTemplateEngine());
@@ -74,7 +74,7 @@ public class App {
             String location = req.queryParams("location");
 
 
-            Sighting sighting = new Sighting(location, rangerName, id, animal);
+            Sightings sighting = new Sightings(location, rangerName, id, animal);
             sighting.save();
 
             res.redirect("/");
@@ -120,7 +120,7 @@ public class App {
 
         get("/sighting", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("sighting", Sighting.all());
+            model.put("sighting", Sightings.all());
 
             return new ModelAndView(model, "sighting.hbs");
 
