@@ -2,7 +2,7 @@ import java.util.Objects;
 import org.sql2o.*;
 import java.util.List;
 
-public class Animal {
+public class Animals {
     private  String name;
     private int id;
 
@@ -11,7 +11,7 @@ public class Animal {
     public static final String  THREAT_TYPE ="Non-Endangereds";
     //constructor
 
-    public Animal(String name){ this.name = name; }
+    public Animals(String name){ this.name = name; }
 
     //getters
 
@@ -23,7 +23,7 @@ public class Animal {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Animal animal = (Animal) o;
+        Animals animal = (Animals) o;
         return id == animal.id &&
                 Objects.equals(name, animal.name);
     }
@@ -44,21 +44,21 @@ public class Animal {
         }
     }
 
-    public static List<Animal> all() {
+    public static List<Animals> all() {
         String sql = "SELECT * FROM animals where threattype = 'Non-Endangereds'";
         try(Connection con = DB.sql2o.open()) {
             return con.createQuery(sql)
                     .throwOnMappingFailure(false)
-                    .executeAndFetch(Animal.class);
+                    .executeAndFetch(Animals.class);
         }
     }
 
-    public static Animal find(int id) {
+    public static Animals find(int id) {
         try(Connection con = DB.sql2o.open()) {
             String sql = "SELECT * FROM animals where id=:id";
-            Animal animal = con.createQuery(sql)
+            Animals animal = con.createQuery(sql)
                     .addParameter("id", id)
-                    .executeAndFetchFirst(Animal.class);
+                    .executeAndFetchFirst(Animals.class);
             return animal;
         }
     }
