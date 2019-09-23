@@ -58,7 +58,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             Ranger ranger = Ranger.find(Integer.parseInt(req.params(":id")));
             model.put("ranger", ranger);
-            model.put("animals", Animal.all());
+            model.put("animals", Animals.all());
             model.put("location", Location.all());
             model.put("sighting", Sighting.find(Integer.parseInt(req.params(":id"))));
             return new ModelAndView(model, "sighting-form.hbs");
@@ -85,8 +85,8 @@ public class App {
         ///////////////Animals
         get("/animals", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("animals", Animal.all());
-            model.put("endangereds", Endangereds.allEndangered());
+            model.put("animals", Animals.all());
+            model.put("endangereds", Endangered.allEndangered());
             return new ModelAndView(model, "animals.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -99,14 +99,14 @@ public class App {
             if (req.queryParams("endangereds") != null) {
                 if (!(name.trim().isEmpty() || health.trim().isEmpty() || age.trim().isEmpty())) {
 
-                    Endangereds endangereds = new Endangereds(name, health, age);
+                    Endangered endangereds = new Endangered(name, health, age);
                     endangereds.save();
                 } else {
                     System.out.println("Please fill in all the fields");
                 }
             } else {
                 if (!(name.trim().isEmpty())) {
-                    Animal animal = new Animal(name);
+                    Animals animal = new Animals(name);
                     animal.save();
                 } else {
                     System.out.println("Please fill in all the fields");
