@@ -13,10 +13,10 @@ This is a Wildlife tracker application that allows wildlife reservation companie
 
 ##Database
 
-CREATE TABLE animals(id SERIAL PRIMARY KEY,health varchar, age varchar, type varchar,name varchar);
-CREATE TABLE locations(id SERIAL PRIMARY KEY, name varchar);
-CREATE TABLE rangers(id SERIAL PRIMARY KEY, rangerName varchar , rangerId int);
-CREATE TABLE sightings(id SERIAL PRIMARY KEY, ranger varchar , location varchar, animalint);
+    CREATE TABLE animals(id SERIAL PRIMARY KEY,health varchar, age varchar, type varchar,name varchar);
+    CREATE TABLE locations(id SERIAL PRIMARY KEY, name varchar);
+    CREATE TABLE rangers(id SERIAL PRIMARY KEY, rangerName varchar , rangerId int);
+    CREATE TABLE sightings(id SERIAL PRIMARY KEY, ranger varchar , location varchar, animalint);
 
 ## Live link
 
