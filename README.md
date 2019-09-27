@@ -11,7 +11,7 @@ This is a Wildlife tracker application that allows wildlife reservation companie
 5. Junit 5
 6. Postgres database
 
-##Database
+## Database
 
     CREATE TABLE animals(id SERIAL PRIMARY KEY,health varchar, age varchar, type varchar,name varchar);
     CREATE TABLE locations(id SERIAL PRIMARY KEY, name varchar);
