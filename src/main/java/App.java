@@ -15,8 +15,13 @@ public class App {
     public static void main(String[] args) {
 
         staticFileLocation("/public");
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "home.hbs");
+        }, new HandlebarsTemplateEngine());
 
-        get("/", (req, res) -> {
+
+        get("/ranger", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("ranger", Ranger.all());
             return new ModelAndView(model, "index.hbs");
