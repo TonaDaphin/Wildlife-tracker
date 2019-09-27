@@ -5,10 +5,7 @@ import java.util.Objects;
 public class Endangered extends Animals {
 
     private String health;
-<<<<<<< HEAD
     private String name;
-=======
->>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
     private String age;
     private int id;
 
@@ -33,12 +30,9 @@ public class Endangered extends Animals {
 //constructors
 
     public Endangered(String name, String health, String age) {
-<<<<<<< HEAD
+
         super(name, health, age);
         this.name=name;
-=======
-        super(name);
->>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
         this.health = health;
         this.age = age;
     }

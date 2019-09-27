@@ -2,11 +2,7 @@ plugins {
     id 'java'
 }
 
-<<<<<<< HEAD
-group 'jjj'
-=======
 group 'Wildlife'
->>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -21,9 +17,7 @@ dependencies {
     compile "com.sparkjava:spark-template-handlebars:2.5.5"
     compile 'org.slf4j:slf4j-simple:1.7.21'
     compile 'org.sql2o:sql2o:1.5.4'
-<<<<<<< HEAD
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
-=======
     compile group: 'com.h2database', name: 'h2', version: '1.4.191'
->>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
+
 }
