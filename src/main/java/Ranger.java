@@ -50,9 +50,13 @@ public class Ranger {
     public static List<Ranger> all() {
         String sql = "SELECT * FROM rangers";
         try (Connection con = DB.sql2o.open()) {
+<<<<<<< HEAD
             return con.createQuery(sql)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(Ranger.class);
+=======
+            return con.createQuery(sql).executeAndFetch(Ranger.class);
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
         }
     }
 

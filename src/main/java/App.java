@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
         import java.util.HashMap;
         import java.util.List;
@@ -10,6 +11,17 @@
 
 
         public class App {
+=======
+import static spark.Spark.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
+
+
+public class App {
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
 
     public static void main(String[] args) {
 
@@ -68,11 +80,16 @@
 
         }, new HandlebarsTemplateEngine());
 
+<<<<<<< HEAD
         post("/sightings", (req, res) -> {
+=======
+        post("/sighting", (req, res) -> {
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
             Map<String, Object> model = new HashMap<>();
 
             String rangerName = req.queryParams("rangerName");
             String animal = req.queryParams("animal");
+<<<<<<< HEAD
             String location = req.queryParams("location");
 
 
@@ -80,13 +97,27 @@
             sighting.save();
 
             res.redirect("/sightings");
+=======
+            int id = Integer.parseInt(req.queryParams("id"));
+            String location = req.queryParams("location");
+
+
+            Sightings sighting = new Sightings(location, rangerName, id, animal);
+            sighting.save();
+
+            res.redirect("/");
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
             return null;
         }, new HandlebarsTemplateEngine());
 
 
         ///////////////Animals
         get("/animals", (req, res) -> {
+<<<<<<< HEAD
             Map<Object, Object> model = new HashMap<>();
+=======
+            Map<String, Object> model = new HashMap<>();
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
             model.put("animals", Animals.all());
             model.put("endangereds", Endangered.allEndangered());
             return new ModelAndView(model, "animals.hbs");
@@ -108,8 +139,13 @@
                 }
             } else {
                 if (!(name.trim().isEmpty())) {
+<<<<<<< HEAD
                     Animals animals = new Animals(name, health, age);
                     animals.save();
+=======
+                    Animals animal = new Animals(name);
+                    animal.save();
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
                 } else {
                     System.out.println("Please fill in all the fields");
                 }
@@ -120,11 +156,19 @@
             return null;
         }, new HandlebarsTemplateEngine());
 
+<<<<<<< HEAD
         get("/sightings", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("sightings", Sightings.all());
 
             return new ModelAndView(model, "sightings-form.hbs");
+=======
+        get("/sighting", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("sighting", Sightings.all());
+
+            return new ModelAndView(model, "sighting.hbs");
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
 
         }, new HandlebarsTemplateEngine());
 
@@ -148,5 +192,9 @@
             return null;
         },new HandlebarsTemplateEngine());
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259

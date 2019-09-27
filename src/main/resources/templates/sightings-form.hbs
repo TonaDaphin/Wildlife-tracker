@@ -3,17 +3,30 @@
     <div class="sighting-form container">
         <div class="card">
             <h1>Record Sighting</h1>
+<<<<<<< HEAD
             <form action="/sightings" method="post">
+=======
+            <form action="/sighting" method="post">
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
                 <input type="hidden" name="name" id="name" value="{{rangerName}}">
                 <div class="form-group row">
                     <label for="animal" class="col-sm-2 col-form-label">Animal</label>
                     <div class="col-sm-10">
+<<<<<<< HEAD
                         <input type="text" name="animal" id="animal">
+=======
+                        <select id="animal" name="animal" class="form-control">
+                            {{#each animal}}
+                                <option value="{{id}}">{{name}}</option>
+                            {{/each}}
+                        </select>
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="location" class="col-sm-2 col-form-label">Location</label>
                     <div class="col-sm-10">
+<<<<<<< HEAD
                        <input type="text" name="location" id="location">
                     </div>
                 </div>
@@ -21,6 +34,13 @@
                     <label for="location" class="col-sm-2 col-form-label">Ranger</label>
                     <div class="col-sm-10">
                        <input type="text" name="rangerName" id="rangerName">
+=======
+                        <select id="location" name="location" class="form-control">
+                            {{#each location}}
+                                <option value="{{name}}">{{name}}</option>
+                            {{/each}}
+                        </select>
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
                     </div>
                 </div>
                 <div class="form-group row">
@@ -31,6 +51,7 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
 
 {{!--  <div class="sighting-form container"> --}}
 {{!--         <div class="card"> --}}
@@ -111,5 +132,7 @@
 
         </div>
 
+=======
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
 {{/partial}}
 {{> layout.hbs}}

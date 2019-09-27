@@ -14,7 +14,11 @@ public class Sightings {
     private Timestamp month;
 
 
+<<<<<<< HEAD
     public Sightings(String location,String rangerName,String animal){
+=======
+    public Sightings(String location,String rangerName,int id,String animal){
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
         this.rangerName = rangerName;
         this.id=id;
         this.animal = animal;
@@ -38,7 +42,11 @@ public class Sightings {
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
+<<<<<<< HEAD
             String sql = "INSERT INTO sightings (rangerName,location,animal) VALUES (:rangerName, :location,:animal)";
+=======
+            String sql = "INSERT INTO sightings (location,rangerName,animal) VALUES (:rangerName, :location,:animal)";
+>>>>>>> bac76b90c29c5d269aa7e3c5d52ed2db5ca26259
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("rangerName", this.rangerName)
                     .addParameter("location",location)
